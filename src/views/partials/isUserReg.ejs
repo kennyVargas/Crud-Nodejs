@@ -1,0 +1,24 @@
+
+<%if(oneuser){%>
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Notes
+		</a>
+		<ul class="dropdown-menu">
+		<li><a class="dropdown-item" href="/notes">All Notes</a></li>
+		<li><a class="dropdown-item" href="/notes/add_Notes">add A Notes</a></li>
+		<li><hr class="dropdown-divider"></li>
+		<li><a class="dropdown-item" href="/logout">Logout</a></li>
+		</ul>
+	</li>
+	<li class="nav-item btn btn-outline-success my-2 my-sm-0 ">
+		<img src="./asset/user.svg" alt="foto user">
+		<%= oneuser.name %>
+	</li>
+<%} else{ %>
+	<li class="nav-item">
+		<a href="/signin" class="nav-link">Login</a>
+	</li>
+	<li class="nav-item">
+		<a href="/signup" class="nav-link">Register</a>
+	</li>
+<%}%>

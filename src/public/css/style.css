@@ -1,0 +1,20 @@
+*{
+	margin:0;
+	padding: 0;
+}
+.svg--img_edit{
+	background-color: white;
+	cursor: pointer;	
+}
+.logo_js{
+	height: 250px;
+    background-color: #ffda00;
+    border: 9px solid #262626;
+}
+
+
+.img_add_note{
+	width: 300px;
+	height: 160px;
+	background-color: #a1a1a1;
+}

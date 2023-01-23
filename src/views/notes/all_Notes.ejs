@@ -1,0 +1,38 @@
+<%- include('../partials/header')%>
+<%- include('../partials/navigation')%>
+<h1>ALL NOTES</h1>
+<% if(success_msg!=''){ %>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Alert! </strong> <%= success_msg %> .
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+  </button>
+</div>	
+<% } %>
+<div class="row">
+<% notes.forEach(nota=>{ %>
+	<div class="col-md-3 mt-4">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title d-flex justify-content-between align-items-center">
+					<%= nota.title %>
+					<a href='/notes/edit/<%= nota._id %>'><img class="svg--img_edit" src="./asset/edit.svg" alt="icon edit">
+					</a>
+				</h4>
+				<p> <%= nota.description %></p>
+				<form action='/notes/delete/<%= nota._id %>?_method=DELETE' method="POST">
+					<input type="hidden" name="_method" value="DELETE">
+					<button type="submit" class="btn btn-danger btn-block btn-sm">
+						DELETE
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+<% }) %>
+<div class="col-md-3 mt-4">
+	<a href="notes/add_notes">
+  		<img class="img_add_note" src="./asset/file-plus.svg" alt="img add notes">
+	</a>
+</div>
+</div>	
+<%- include('../partials/footer')%>
